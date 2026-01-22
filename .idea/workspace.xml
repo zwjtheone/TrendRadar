@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="还原拆分">
+    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="cron">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/frequency_words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/frequency_words.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +79,7 @@
       <workItem from="1768919903045" duration="116000" />
       <workItem from="1769075883674" duration="555000" />
       <workItem from="1769092807563" duration="81000" />
-      <workItem from="1769092890274" duration="234000" />
+      <workItem from="1769092890274" duration="1122000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <option name="closed" value="true" />
@@ -142,7 +145,23 @@
       <option name="project" value="LOCAL" />
       <updated>1769076425119</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ai_translation">
+      <option name="closed" value="true" />
+      <created>1769093133723</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1769093133723</updated>
+    </task>
+    <task id="LOCAL-00010" summary="cron">
+      <option name="closed" value="true" />
+      <created>1769093212187</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1769093212187</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +183,9 @@
     <MESSAGE value="config" />
     <MESSAGE value="提示词更新" />
     <MESSAGE value="还原拆分" />
-    <option name="LAST_COMMIT_MESSAGE" value="还原拆分" />
+    <MESSAGE value="ai_translation" />
+    <MESSAGE value="cron" />
+    <option name="LAST_COMMIT_MESSAGE" value="cron" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
