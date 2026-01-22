@@ -494,7 +494,7 @@ ai_analysis:
   prompt_file: "ai_analysis_prompt.txt"
 
   # 分析内容配置
-  max_news_for_analysis: 50         # 参与分析的新闻数量上限（控制成本关键项）
+  max_news_for_analysis: 100         # 参与分析的新闻数量上限（控制成本关键项）
                                     # 当前默认的【报告模式】是【当前榜单模式】（current），也就是只分析当前在热榜的新闻
                                     # 如果需要让报告呈现出更有参考价值的完整一天的趋势，且你的 token 充裕
                                       # 可开启 daily（当日汇总模式）
