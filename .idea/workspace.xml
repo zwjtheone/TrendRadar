@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="cron调整">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="添加ai新闻rss" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +80,7 @@
       <workItem from="1769237588700" duration="121000" />
       <workItem from="1769237781226" duration="78000" />
       <workItem from="1769251338777" duration="351000" />
-      <workItem from="1769262903326" duration="656000" />
+      <workItem from="1769262903326" duration="1022000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <option name="closed" value="true" />
@@ -221,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769251681739</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="添加ai新闻rss">
+      <option name="closed" value="true" />
+      <created>1769271994121</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1769271994121</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +251,8 @@
     <MESSAGE value="cron" />
     <MESSAGE value="config" />
     <MESSAGE value="cron调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="cron调整" />
+    <MESSAGE value="添加ai新闻rss" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加ai新闻rss" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
