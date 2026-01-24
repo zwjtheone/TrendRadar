@@ -198,6 +198,12 @@ rss:
       enabled: true
       max_age_days: 1
 
+    - id: "cloudflare-ai-insight-daily"
+      name: "CloudFlare-AI-Insight-Daily"
+      url: "https://in.mashable.com/feed.xml"
+      enabled: true
+      max_age_days: 1
+
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
