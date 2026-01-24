@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="config">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/crawler.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/crawler.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="cron调整" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +77,7 @@
       <workItem from="1769092890274" duration="2446000" />
       <workItem from="1769183219755" duration="232000" />
       <workItem from="1769237424457" duration="12000" />
-      <workItem from="1769237588700" duration="79000" />
+      <workItem from="1769237588700" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <option name="closed" value="true" />
@@ -194,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769183439669</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="cron调整">
+      <option name="closed" value="true" />
+      <created>1769237698304</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1769237698304</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +223,8 @@
     <MESSAGE value="ai_translation" />
     <MESSAGE value="cron" />
     <MESSAGE value="config" />
-    <option name="LAST_COMMIT_MESSAGE" value="config" />
+    <MESSAGE value="cron调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="cron调整" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
