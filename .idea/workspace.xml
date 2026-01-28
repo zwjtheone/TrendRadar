@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="添加ai新闻rss" />
+    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="ai提示词更新">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +83,8 @@
       <workItem from="1769237588700" duration="121000" />
       <workItem from="1769237781226" duration="78000" />
       <workItem from="1769251338777" duration="351000" />
-      <workItem from="1769262903326" duration="1022000" />
+      <workItem from="1769262903326" duration="1308000" />
+      <workItem from="1769613995173" duration="277000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <option name="closed" value="true" />
@@ -226,7 +230,23 @@
       <option name="project" value="LOCAL" />
       <updated>1769271994121</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ai提示词更新">
+      <option name="closed" value="true" />
+      <created>1769272586119</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1769272586119</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ai提示词更新">
+      <option name="closed" value="true" />
+      <created>1769272602351</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1769272602351</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +272,8 @@
     <MESSAGE value="config" />
     <MESSAGE value="cron调整" />
     <MESSAGE value="添加ai新闻rss" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加ai新闻rss" />
+    <MESSAGE value="ai提示词更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="ai提示词更新" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
