@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="config">
+    <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="ai提示词">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ai_analysis_prompt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/ai_analysis_prompt.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,8 @@
       <workItem from="1769251338777" duration="351000" />
       <workItem from="1769262903326" duration="1308000" />
       <workItem from="1769613995173" duration="321000" />
-      <workItem from="1769651702855" duration="138000" />
+      <workItem from="1769651702855" duration="157000" />
+      <workItem from="1769825734837" duration="86000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <option name="closed" value="true" />
@@ -263,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769614308403</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="ai提示词">
+      <option name="closed" value="true" />
+      <created>1769651849378</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1769651849378</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +298,8 @@
     <MESSAGE value="添加ai新闻rss" />
     <MESSAGE value="ai提示词更新" />
     <MESSAGE value="config" />
-    <option name="LAST_COMMIT_MESSAGE" value="config" />
+    <MESSAGE value="ai提示词" />
+    <option name="LAST_COMMIT_MESSAGE" value="ai提示词" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

@@ -207,6 +207,12 @@ rss:
       enabled: true
       max_age_days: 1
 
+    - id: "css-tricks"
+      name: "CSS-Tricks"
+      url: "https://css-tricks.com/feed/"
+      enabled: true
+      max_age_days: 1
+
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
