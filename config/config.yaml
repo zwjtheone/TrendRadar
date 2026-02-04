@@ -213,6 +213,12 @@ rss:
       enabled: true
       max_age_days: 1
 
+    - id: "githubweekly"
+      name: "Github-Weekly"
+      url: "https://itcoffee66.github.io/githubweekly/rss.xml"
+      enabled: true
+
+
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"

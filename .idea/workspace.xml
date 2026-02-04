@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="06d13c5a-d90d-4af7-ae60-2d61eb7a5149" name="更改" comment="ai提示词">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +87,8 @@
       <workItem from="1769613995173" duration="321000" />
       <workItem from="1769651702855" duration="157000" />
       <workItem from="1769825734837" duration="86000" />
+      <workItem from="1770170390300" duration="1871000" />
+      <workItem from="1770226776050" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <option name="closed" value="true" />
