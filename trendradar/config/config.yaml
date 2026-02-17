@@ -41,7 +41,7 @@ app:
 # ===============================================================
 schedule:
   enabled: true                         # 是否启用调度系统
-  preset: "custom"             # 预设模板名称（见上方说明）
+  preset: "office_hours"             # 预设模板名称（见上方说明）
 
 
 # ===============================================================
@@ -269,7 +269,7 @@ rss:
 #    • 适用场景：避免重复信息干扰
 # ===============================================================
 report:
-  mode: "current"                     # 可选: daily | current | incremental
+  mode: "incremental"                     # 可选: daily | current | incremental
   # ⚠️ 开启调度系统后，此值会被当前时间段的 report_mode 覆盖
 
   display_mode: "keyword"             # 分组维: keyword | plat度form
@@ -315,7 +315,7 @@ display:
     # 注：热点词汇统计中的新增标记🆕不受此配置影响
 
     rss: true                         # RSS 订阅区域
-    # 开启后将对 RSS 进行关键词分析并在通知中展示
+      # 开启后将对 RSS 进行关键词分析并在通知中展示
     # 关闭后跳过分析，但独立展示区不受影响
 
     standalone: false                 # 独立展示区（完整热榜/RSS，不受关键词过滤）
@@ -356,7 +356,7 @@ display:
 notification:
   enabled: true                       # 是否启用通知功能（总开关）
     # ⚠️ 开启调度系统后，此项仍为总开关：
-  #   false → 永远不推送（无论调度怎么设置）
+    #   false → 永远不推送（无论调度怎么设置）
   #   true  → 由调度的 push 字段控制何时推送
 
   # 推送渠道配置
@@ -408,13 +408,13 @@ storage:
   # - auto: 自动选择（GitHub Actions 且配置了远程存储 → remote，否则 → local）
   # - local: 本地 SQLite + TXT/HTML 文件
   # - remote: 远程云存储（S3 兼容协议，支持 R2/OSS/COS 等）
-  backend: "auto"
+  backend: "remote"
 
   # 数据格式选项
   formats:
     sqlite: true                      # 主存储（必须启用）
     txt: false                        # 是否生成 TXT 快照
-    html: true                       # 是否生成 HTML 报告（⚠️ 邮件推送或者需要看网页版报告必须设为 true）
+    html: false                       # 是否生成 HTML 报告（⚠️ 邮件推送或者需要看网页版报告必须设为 true）
 
   # 本地存储配置
   local:
@@ -429,7 +429,7 @@ storage:
 
     # S3 兼容配置（或使用环境变量 S3_ENDPOINT_URL 等）
     endpoint_url: ""                  # 服务端点
-    # Cloudflare R2: https://<account_id>.r2.cloudflarestorage.com
+      # Cloudflare R2: https://<account_id>.r2.cloudflarestorage.com
     # 阿里云 OSS: https://oss-cn-hangzhou.aliyuncs.com
     # 腾讯云 COS: https://cos.ap-guangzhou.myqcloud.com
     bucket_name: ""                   # 存储桶名称
@@ -474,7 +474,7 @@ ai:
     # 1. api_base 填写: 服务商提供的接口地址
     #    例如: https://api.example.com/v1
     #
-  # 2. model 填写: "openai/" + 实际模型名称
+    # 2. model 填写: "openai/" + 实际模型名称
   #    例如: openai/deepseek-ai/DeepSeek-V3
   #    (原理：前缀 openai/ 强制 LiteLLM 使用 OpenAI 协议格式进行通信)
 
@@ -516,7 +516,7 @@ ai:
 ai_analysis:
   enabled: true                     # 是否启用 AI 分析（总开关）
     # ⚠️ 开启调度系统后，此项仍为总开关：
-  #   false → 永远不分析（无论调度怎么设置）
+    #   false → 永远不分析（无论调度怎么设置）
   #   true  → 由调度的 analyze 字段控制何时分析
 
   # 分析报告输出语言
@@ -549,7 +549,7 @@ ai_analysis:
     # 按默认模型(deepseek)
     # max_news_for_analysis 为 【50】 条
     # include_rank_timeline 为 【false】
-  # 则
+    # 则
   # GitHub Action 部署默认推送约 20 次（每小时推送一次）， 约 0.1 元/天
   # Docker 部署默认推送 48 次(每半小时推送一次)， 约 0.2 元/天
 
@@ -558,7 +558,7 @@ ai_analysis:
   include_standalone: true          # 是否将独立展示区数据纳入 AI 分析（只需上方 display 区的 standalone 配置了平台/RSS 即可）
 
   include_rank_timeline: true       # 是否传递完整排名时间线
-  # false: 使用简化格式（排名范围+时间范围+出现次数）
+    # false: 使用简化格式（排名范围+时间范围+出现次数）
   # true: 传递完整排名变化轨迹（如 1(09:30)→2(10:00)→0(11:00)）
   # 启用后 AI 能更精确分析热度趋势，但会额外增加 token 消耗（0.5 倍到 1 倍）
 
