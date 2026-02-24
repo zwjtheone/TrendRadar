@@ -123,7 +123,7 @@ presets:
     # 因为这个模式没有划分时间段，所以 default 就是全天的行为
     default:
       collect: true                # 采集数据（爬取热榜 + RSS）
-      analyze: true               # 不做 AI 分析（节省 API 费用）
+      analyze: false               # 不做 AI 分析（节省 API 费用）
       ai_mode: "current"           # AI 分析当前榜单
       push: true                   # 有新内容就推送
       report_mode: "incremental"   # 只推送新增内容，避免重复
@@ -242,7 +242,7 @@ presets:
       noon_update:
         name: "午间热点"
         start: "13:00"
-        end: "15:00"              
+        end: "15:00"
         push: true                 # 午间推送当前在榜热点
         report_mode: "current"     # 当前在榜的新闻
         # analyze 继承 default: false → 午间不做 AI 分析，节省 API
@@ -400,20 +400,20 @@ custom:
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   default:
     collect: true                  # 是否采集数据（爬取热榜 + RSS）
-    analyze: true                 # 是否执行 AI 分析
-    ai_mode: "incremental"            # AI 分析模式:
-                                   #   follow_report → 跟随 report_mode
-                                   #   daily         → 强制全天汇总
-                                   #   current       → 强制当前榜单
-                                   #   incremental   → 强制增量模式
-    push: true                    # 是否发送推送通知
-    report_mode: "incremental"         # 报告模式:
-                                   #   daily       → 当日所有新闻的汇总
-                                   #   current     → 当前在榜的新闻
-                                   #   incremental → 只推送新增内容
+    analyze: false                 # 是否执行 AI 分析
+    ai_mode: "current"            # AI 分析模式:
+      #   follow_report → 跟随 report_mode
+      #   daily         → 强制全天汇总
+      #   current       → 强制当前榜单
+    #   incremental   → 强制增量模式
+    push: false                    # 是否发送推送通知
+    report_mode: "current"         # 报告模式:
+      #   daily       → 当日所有新闻的汇总
+      #   current     → 当前在榜的新闻
+    #   incremental → 只推送新增内容
     once:
-      analyze: false                # 该时间段内只分析一次（省 API）
-      push: false                   # 该时间段内只推送一次（省打扰）
+      analyze: true                # 该时间段内只分析一次（省 API）
+      push: true                   # 该时间段内只推送一次（省打扰）
 
 
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
