@@ -263,6 +263,7 @@ def _load_ai_config(config_data: Dict) -> Dict:
     ai_config = config_data.get("ai", {})
 
     timeout_env = _get_env_int_or_none("AI_TIMEOUT")
+    max_tokens_env = _get_env_int_or_none("AI_MAX_TOKENS")
 
     return {
         # LiteLLM 核心配置
@@ -273,7 +274,7 @@ def _load_ai_config(config_data: Dict) -> Dict:
         # 生成参数
         "TIMEOUT": timeout_env if timeout_env is not None else ai_config.get("timeout", 120),
         "TEMPERATURE": ai_config.get("temperature", 1.0),
-        "MAX_TOKENS": ai_config.get("max_tokens", 5000),
+        "MAX_TOKENS": max_tokens_env if max_tokens_env is not None else ai_config.get("max_tokens", 5000),
 
         # LiteLLM 高级选项
         "NUM_RETRIES": ai_config.get("num_retries", 2),

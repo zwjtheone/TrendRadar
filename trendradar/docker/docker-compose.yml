@@ -3,6 +3,7 @@ services:
     image: wantcat/trendradar:latest
     container_name: trendradar
     restart: unless-stopped
+    env_file: .env
 
     ports:
       - "127.0.0.1:${WEBSERVER_PORT:-8080}:${WEBSERVER_PORT:-8080}"
@@ -10,6 +11,8 @@ services:
     volumes:
       - ../config:/app/config:ro
       - ../output:/app/output
+      # 挂载本地源码，使 AI_MAX_TOKENS 等环境变量生效（预构建镜像可能含旧代码）
+      - ..:/app/trendradar:ro
 
     environment:
       - TZ=Asia/Shanghai
@@ -45,6 +48,10 @@ services:
       - AI_API_KEY=${AI_API_KEY:-}
       - AI_MODEL=${AI_MODEL:-}
       - AI_API_BASE=${AI_API_BASE:-}
+      - AI_TIMEOUT=${AI_TIMEOUT:-}
+      - AI_MAX_TOKENS=${AI_MAX_TOKENS:-}
+      - AI_NUM_RETRIES=${AI_NUM_RETRIES:-}
+      - AI_TEMPERATURE=${AI_TEMPERATURE:-}
       # 远程存储配置（S3 兼容协议）
       - S3_ENDPOINT_URL=${S3_ENDPOINT_URL:-}
       - S3_BUCKET_NAME=${S3_BUCKET_NAME:-}

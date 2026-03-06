@@ -132,14 +132,14 @@ platforms:
 #      name: "牛客网"
 #    - id: "pcbeta"
 #      name: "远景论坛"
-    - id: "sspai"
-      name: "少数派"
+#    - id: "sspai"
+#      name: "少数派"
     - id: "producthunt"
       name: "ProductHunt"
 
     # === 其他/工具类 ===
-#    - id: "chongbuluo"
-#      name: "虫部落"
+    - id: "chongbuluo"
+      name: "虫部落"
 
     # NewsNow的信息源在11月20日更新：
 
@@ -149,14 +149,14 @@ platforms:
 #    - id: "cls-telegraph"
 #      name: "财联社 电报"
 #
-#    - id: "cls-depth"
-#      name: "财联社 深度"
+    - id: "cls-depth"
+      name: "财联社 深度"
 #
 #    - id: "fastbull-express"
 #      name: "法布财经 快讯"
 #
-#    - id: "fastbull-news"
-#      name: "法布财经 头条"
+    - id: "fastbull-news"
+      name: "法布财经 头条"
 
 # ===============================================================
 # 3. 数据源 - RSS 订阅

@@ -1,1 +1,4 @@
 /trendradar/docker/.env
+.idea/**
+**/.DS_Store
+output/
