@@ -37,7 +37,7 @@ def _parse_version(version_str: str) -> Tuple[int, int, int]:
         if len(parts) >= 3:
             return int(parts[0]), int(parts[1]), int(parts[2])
         return 0, 0, 0
-    except:
+    except (ValueError, AttributeError, TypeError):
         return 0, 0, 0
 
 
@@ -564,6 +564,8 @@ class NewsAnalyzer:
                     scheduler = self.ctx.create_scheduler()
                     date_str = self.ctx.format_date()
                     scheduler.record_execution(schedule.period_key, "analyze", date_str)
+            elif result.skipped:
+                print(f"[AI] {result.error}")
             else:
                 print(f"[AI] 分析失败: {result.error}")
 
@@ -867,7 +869,22 @@ class NewsAnalyzer:
                 standalone_data=standalone_data
             )
 
-        # HTML生成（如果启用）
+        # 翻译 RSS 内容（如果启用）— 在 HTML 生成前执行，确保网页版也能展示翻译内容
+        # 注意：仅翻译 rss_items 和 rss_new_items，不翻译 standalone_data（通知前会重新生成）
+        # 热榜翻译在推送时由 dispatch_all 处理 report_data
+        trans_config = self.ctx.config.get("AI_TRANSLATION", {})
+        if trans_config.get("ENABLED", False):
+            dispatcher = self.ctx.create_notification_dispatcher()
+            display_regions = self.ctx.config.get("DISPLAY", {}).get("REGIONS", {})
+            _, rss_items, rss_new_items, _ = \
+                dispatcher.translate_content(
+                    report_data={"stats": [], "new_titles": []},
+                    rss_items=rss_items,
+                    rss_new_items=rss_new_items,
+                    display_regions=display_regions,
+                )
+
+        # HTML生成（如果启用）— 使用翻译后的数据
         html_file = None
         if self.ctx.config["STORAGE"]["FORMATS"]["HTML"]:
             html_file = self.ctx.generate_html(
@@ -960,6 +977,7 @@ class NewsAnalyzer:
             update_info_to_send = self.update_info if cfg["SHOW_VERSION_UPDATE"] else None
 
             # 使用 NotificationDispatcher 发送到所有渠道
+            # RSS/独立展示区数据已在分析流水线中翻译过，跳过重复翻译（仅翻译热榜 report_data）
             dispatcher = self.ctx.create_notification_dispatcher()
             results = dispatcher.dispatch_all(
                 report_data=report_data,
@@ -972,6 +990,7 @@ class NewsAnalyzer:
                 rss_new_items=rss_new_items,
                 ai_analysis=ai_result,
                 standalone_data=standalone_data,
+                skip_translation=True,
             )
 
             if not results:

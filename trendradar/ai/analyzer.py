@@ -8,10 +8,10 @@ AI 分析器模块
 
 import json
 from dataclasses import dataclass, field
-from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
 
 from trendradar.ai.client import AIClient
+from trendradar.ai.prompt_loader import load_prompt_template
 
 
 @dataclass
@@ -28,6 +28,7 @@ class AIAnalysisResult:
     # 基础元数据
     raw_response: str = ""               # 原始响应
     success: bool = False                # 是否成功
+    skipped: bool = False                # 是否因无内容跳过（非失败）
     error: str = ""                      # 错误信息
 
     # 新闻数量统计
@@ -79,40 +80,10 @@ class AIAnalyzer:
         self.language = analysis_config.get("LANGUAGE", "Chinese")
 
         # 加载提示词模板
-        self.system_prompt, self.user_prompt_template = self._load_prompt_template(
-            analysis_config.get("PROMPT_FILE", "ai_analysis_prompt.txt")
+        self.system_prompt, self.user_prompt_template = load_prompt_template(
+            analysis_config.get("PROMPT_FILE", "ai_analysis_prompt.txt"),
+            label="AI",
         )
-
-    def _load_prompt_template(self, prompt_file: str) -> tuple:
-        """加载提示词模板"""
-        config_dir = Path(__file__).parent.parent.parent / "config"
-        prompt_path = config_dir / prompt_file
-
-        if not prompt_path.exists():
-            print(f"[AI] 提示词文件不存在: {prompt_path}")
-            return "", ""
-
-        content = prompt_path.read_text(encoding="utf-8")
-
-        # 解析 [system] 和 [user] 部分
-        system_prompt = ""
-        user_prompt = ""
-
-        if "[system]" in content and "[user]" in content:
-            parts = content.split("[user]")
-            system_part = parts[0]
-            user_part = parts[1] if len(parts) > 1 else ""
-
-            # 提取 system 内容
-            if "[system]" in system_part:
-                system_prompt = system_part.split("[system]")[1].strip()
-
-            user_prompt = user_part.strip()
-        else:
-            # 整个文件作为 user prompt
-            user_prompt = content
-
-        return system_prompt, user_prompt
 
     def analyze(
         self,
@@ -169,7 +140,8 @@ class AIAnalyzer:
         if not news_content and not rss_content:
             return AIAnalysisResult(
                 success=False,
-                error="没有可分析的新闻内容",
+                skipped=True,
+                error="本轮无新增热点内容，跳过 AI 分析",
                 total_news=total_news,
                 hotlist_count=hotlist_total,
                 rss_count=rss_total,
